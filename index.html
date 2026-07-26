@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="60">
+<meta name="robots" content="noindex,nofollow">
+<title>Data Collection Monitor</title>
+<style>
+:root{--bg:#f3f5f8;--card:#fff;--edge:#e4e8ee;--ink:#161d2a;--dim:#5a6472;--faint:#8a94a3;--data:#0284c7;--data-soft:#e0f2fe;--track:#e9edf2;--ok:#16a34a;--warn:#d97706;--idle:#64748b;--sh:0 1px 2px rgba(20,30,50,.04),0 8px 24px rgba(20,30,50,.05)}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1219;--card:#151c26;--edge:#232c39;--ink:#e8ecf2;--dim:#96a1b2;--faint:#6b7686;--data:#38bdf8;--data-soft:#0c2a3c;--track:#1f2833;--ok:#34d399;--warn:#fbbf24;--idle:#7688a0;--sh:0 1px 2px rgba(0,0,0,.2),0 8px 30px rgba(0,0,0,.28)}}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:28px 20px 48px}
+.wrap{max-width:660px;margin:0 auto}.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600}
+h1{font-size:21px;letter-spacing:-.01em;margin:4px 0 0}.asof{color:var(--dim);font-size:13px;margin-top:5px}
+.hero{background:var(--card);border:1px solid var(--edge);border-radius:16px;box-shadow:var(--sh);padding:22px 24px;margin:20px 0 14px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:9px;font-weight:650;font-size:15px;padding:9px 15px;border-radius:999px}
+.badge.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent)}.badge.warn{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}.badge.idle{color:var(--idle);background:color-mix(in srgb,var(--idle) 14%,transparent)}
+.dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+.badge.ok .dot{animation:pulse 1.8s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){.badge.ok .dot{animation:none}}
+.pct{font-size:40px;font-weight:750;letter-spacing:-.02em;line-height:1;text-align:right}.pct small{font-size:15px;color:var(--dim);font-weight:500}
+.today{color:var(--ok);font-weight:650;font-size:14px;margin-top:3px;text-align:right}
+.barwrap{background:var(--track);height:8px;border-radius:99px;overflow:hidden;margin:14px 0 2px}.barwrap>i{display:block;height:100%;background:linear-gradient(90deg,var(--data),color-mix(in srgb,var(--data) 70%,#22d3ee));border-radius:99px}
+.whole{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim)}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:16px;box-shadow:var(--sh);padding:8px 22px;margin:18px 0 14px}
+.row{display:grid;grid-template-columns:1fr 92px;gap:4px 12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--edge)}.row:last-child{border-bottom:0}
+.name{font-weight:560;font-size:14px}.tag{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--data);background:var(--data-soft);padding:2px 6px;border-radius:5px;font-weight:600;margin-left:4px}
+.track{background:var(--track);height:6px;border-radius:99px;overflow:hidden;margin-top:8px}.track>i{display:block;height:100%;background:var(--data);border-radius:99px}
+.val{text-align:right;font-size:13px}.val b{font-size:15px}.val .plus{color:var(--ok);font-size:12px;font-weight:600}.val .mut{color:var(--faint);font-size:12px}
+.note{color:var(--dim);font-size:13px;line-height:1.6;padding:2px 4px}.note b{color:var(--ink);font-weight:600}
+</style></head><body><div class="wrap">
+<div class="eyebrow">Batch run</div>
+<h1>Data collection progress</h1>
+<div class="asof mono">Updates itself every minute &middot; Sunday July 26, 3:06 PM</div>
+<div class="hero"><span class="badge ok"><span class="dot"></span>Collecting now</span>
+<div><div class="pct mono">31.7%<small> complete</small></div><div class="today mono">+170 collected today</div></div></div>
+<div class="barwrap"><i style="width:31.7%"></i></div>
+<div class="whole mono"><span>3,041 usable cells</span><span>of 9,600</span></div>
+<div style="height:18px"></div><div class="eyebrow" style="padding-left:4px">Per model &middot; toward 1,600 each</div>
+<div class="card"><div class="row"><div><div class="name">Llama 3.1 8B </div><div class="track"><i style="width:87%"></i></div></div><div class="val mono"><b>87%</b><br><span class="mut">1,394</span></div></div><div class="row"><div><div class="name">gpt-oss 120B <span class="tag">reasoning</span></div><div class="track"><i style="width:38%"></i></div></div><div class="val mono"><b>38%</b><br><span class="plus">+33 today</span></div></div><div class="row"><div><div class="name">Llama 3.3 70B </div><div class="track"><i style="width:33%"></i></div></div><div class="val mono"><b>33%</b><br><span class="plus">+41 today</span></div></div><div class="row"><div><div class="name">Qwen3.6 27B <span class="tag">reasoning</span></div><div class="track"><i style="width:20%"></i></div></div><div class="val mono"><b>20%</b><br><span class="plus">+81 today</span></div></div><div class="row"><div><div class="name">Gemini Flash </div><div class="track"><i style="width:9%"></i></div></div><div class="val mono"><b>9%</b><br><span class="plus">+6 today</span></div></div><div class="row"><div><div class="name">Gemini Flash <span class="tag">reasoning</span></div><div class="track"><i style="width:4%"></i></div></div><div class="val mono"><b>4%</b><br><span class="plus">+9 today</span></div></div></div>
+<div class="note"><b>How to read this.</b> Green means data is coming in right now; grey means the day's free budget is spent and it resumes on tomorrow's reset. Some models run faster than others and finish first; a couple are held to a slow trickle on purpose because their free budget is small.</div>
+</div></body></html>
